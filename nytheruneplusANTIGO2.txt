@@ -53,7 +53,7 @@ local function CreateStarParticle(parent, x, y)
     gradient.Parent = star
     gradient.Color = ColorSequence.new({
         ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
-        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(147, 51, 234)),
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(170, 0, 0)),
         ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
     })
     
@@ -126,9 +126,9 @@ local function CreateAdvancedBackground(parent)
     local gradient1 = Instance.new("UIGradient")
     gradient1.Parent = bgFrame
     gradient1.Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(5, 5, 20)),
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(170, 0, 0)),
         ColorSequenceKeypoint.new(0.3, Color3.fromRGB(0, 0, 0)),
-        ColorSequenceKeypoint.new(0.7, Color3.fromRGB(10, 0, 15)),
+        ColorSequenceKeypoint.new(0.7, Color3.fromRGB(170, 0, 0)),
         ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
     })
     gradient1.Rotation = 45
@@ -154,9 +154,9 @@ local function CreateAdvancedBackground(parent)
     local overlayGradient = Instance.new("UIGradient")
     overlayGradient.Parent = overlay
     overlayGradient.Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 0, 30)),
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(170, 0, 0)),
         ColorSequenceKeypoint.new(0.5, Color3.fromRGB(0, 0, 0)),
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(30, 0, 20))
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 0))
     })
     overlayGradient.Rotation = -45
     
@@ -176,7 +176,7 @@ local function CreatePulsingCircles(parent)
         local circle = Instance.new("Frame")
         circle.Name = "PulsingCircle" .. i
         circle.Parent = parent
-        circle.BackgroundColor3 = Color3.fromRGB(147, 51, 234)
+        circle.BackgroundColor3 = Color3.fromRGB(110, 0, 0)
         circle.BorderSizePixel = 0
         circle.Size = UDim2.new(0, 100 + (i * 50), 0, 100 + (i * 50))
         circle.Position = UDim2.new(0.5, -(50 + (i * 25)), 0.5, -(50 + (i * 25)))
@@ -237,7 +237,7 @@ local function CreateLoadingScreen()
     TitleLabel.BackgroundTransparency = 1
     TitleLabel.Size = UDim2.new(1, 0, 0, 80)
     TitleLabel.Position = UDim2.new(0, 0, 0, 0)
-    TitleLabel.Text = "Nytherune Hub"
+    TitleLabel.Text = "DemoZHub"
     TitleLabel.TextColor3 = LoadingConfig.TextColor
     TitleLabel.TextScaled = true
     TitleLabel.Font = Enum.Font.GothamBold
@@ -245,16 +245,16 @@ local function CreateLoadingScreen()
     
     local titleStroke = Instance.new("UIStroke")
     titleStroke.Parent = TitleLabel
-    titleStroke.Color = Color3.fromRGB(147, 51, 234)
+    titleStroke.Color = Color3.fromRGB(200, 170, 0)
     titleStroke.Thickness = 2
     titleStroke.Transparency = 0.5
     
     local TitleGradient = Instance.new("UIGradient")
     TitleGradient.Parent = TitleLabel
     TitleGradient.Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(147, 51, 234)),
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(170, 0, 0)),
         ColorSequenceKeypoint.new(0.5, Color3.fromRGB(255, 255, 255)),
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(147, 51, 234))
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 0))
     })
     
     local titleAnimation = TweenService:Create(
@@ -527,8 +527,8 @@ local localPlayer = Players.LocalPlayer
 
 -- Usuários autorizados
 local allowedUsers = {
-	["alodozhynn"] = true,
-	["n9xgh"] = true,
+	["EV_Rami"] = true,
+	["Sajwaad"] = true,
 	["JustWX99s"] = true,
 	["lIllIllIllIIIIllII"] = true
 }
@@ -811,12 +811,12 @@ workspace.FallenPartsDestroyHeight = -math.huge
 
 local Window = Libary:MakeWindow({
     Title = "🌌 Nytherune Hub + 🌌 - Nytherune Developers Brookhaven",
-    SubTitle = "by: Nytherune Developers (Wx, Galaxy, Self)",
-    LoadText = "Nytherune Developers",
-    Flags = "nythrnHub_Broookhaven"
+    SubTitle = "by: Nytherune Developers (Sajwaad, GHIM_HUB, )",
+    LoadText = "DemoZHub Developers",
+    Flags = "DemoZ_Brookhaven"
 })
 Window:AddMinimizeButton({
-    Button = { Image = "rbxassetid://1120738435", BackgroundTransparency = 0 },
+    Button = { Image = "rbxassetid://132069262307646", BackgroundTransparency = 0 },
     Corner = { CornerRadius = UDim.new(35, 1) },
 })
 
@@ -824,17 +824,17 @@ local InfoTab = Window:MakeTab({ Title = "Info", Icon = "rbxassetid://1072341590
 
 
 InfoTab:AddDiscordInvite({
-    Name = "Nytherune Developers",
-    Description = "Join server",
+    Name = "DemozXمطورين",
+    Description = "تليجرام",
     Logo = "rbxassetid://18751483361",
-    Invite = "https://discord.gg/ruEdVGsthy",
+    Invite = "https://t.me/R_amI11",
 })
-InfoTab:AddSection({ "Informações do Script" })
-InfoTab:AddParagraph({ "Owner / Developer:", "Wx (TikTok: @sou.wx, Discord: @sou.wx)" })
-InfoTab:AddParagraph({ "Colaborações:", "Lolyta, Dragon, Why, Galaxy, 7, Venom, Luscaa, Icy" })
-InfoTab:AddParagraph({ "Você está usando:", "Nytherune Hub" })
-InfoTab:AddParagraph({"O script é open source olhe nosso github!"})
-InfoTab:AddParagraph({"Novidades:", "Novo Fling Admin! Apenas chegue perto de jogadores"})
+InfoTab:AddSection({ "معلومات السكربت" })
+InfoTab:AddParagraph({ "المالك / المطورين:", "Rami (TikTok: .q.kn," })
+InfoTab:AddParagraph({ "فريق:", "Rami, GHIM_HUB" })
+InfoTab:AddParagraph({ ":", "DemoZHub" })
+InfoTab:AddParagraph({"عمل تجريبي سيتم تطويره"})
+InfoTab:AddParagraph({"Novidades:", "مميزات قوية مثل فلنق الادمن"})
 InfoTab:AddButton({"Versão Experimental", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/wx-sources/spacecomm/refs/heads/main/experimental"))()
 end})
