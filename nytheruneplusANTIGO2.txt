@@ -834,31 +834,31 @@ InfoTab:AddParagraph({ "المالك / المطورين:", "Rami (TikTok: .q.kn,
 InfoTab:AddParagraph({ "فريق:", "Rami, GHIM_HUB" })
 InfoTab:AddParagraph({ ":", "DemoZHub" })
 InfoTab:AddParagraph({"عمل تجريبي سيتم تطويره"})
-InfoTab:AddParagraph({"Novidades:", "مميزات قوية مثل فلنق الادمن"})
-InfoTab:AddButton({"Versão Experimental", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wx-sources/spacecomm/refs/heads/main/experimental"))()
+InfoTab:AddParagraph({"اضافات:", "مميزات قوية مثل فلنق الادمن"})
+InfoTab:AddButton({"ديمون هوب القديم", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/wx-sorces/spaceomm/refs/heads/main/exp"))()
 end})
 
-InfoTab:AddSection({ "Rejoin" })
+InfoTab:AddSection({ "اعادة دخول" })
 InfoTab:AddButton({
-    Name = "Rejoin",
+    Name = "",
     Callback = function()
         local TeleportService = game:GetService("TeleportService")
         TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
     end
 })
 
-local autoTab = Window:MakeTab({ Title = "Autofarm", Icon = "rbxassetid://10734983868" })
+local autoTab = Window:MakeTab({ Title = " (معطل)الحدث الجديد", Icon = "rbxassetid://10734983868" })
 
 
-autoTab:AddSection({ "Autofarm" })
-autoTab:AddParagraph({"Não há mais eventos pra autofarm."})
+autoTab:AddSection({ "اوتو فارم" })
+autoTab:AddParagraph({"اوتو فارم تكت.مو شغال"})
 
-local shadersTab = Window:MakeTab({ Title = "Shaders (client-sided)", Icon = "rbxassetid://10747382750" })
+local shadersTab = Window:MakeTab({ Title = "شادر (يظهر بس عندك)", Icon = "rbxassetid://10747382750" })
 
-shadersTab:AddSection({ "Shaders" })
-shadersTab:AddParagraph({"Não tem como remover a não ser que reentre."})
-shadersTab:AddButton({"Aplicar Shaders 1", function()
+shadersTab:AddSection({ "جودة" })
+shadersTab:AddParagraph({"شادر٢ coming soon."})
+shadersTab:AddButton({"شادرRTX", function()
     -- Aviso: script otimizado, ativação automática sem interface gráfica.
 
 local workspace = game:GetService("Workspace")
@@ -1241,13 +1241,13 @@ local blur = Instance.new("BlurEffect", Lighting)
 blur.Size = 0
 end})
 
-local TrollTab = Window:MakeTab({ Title = "Scripts Trolls", Icon = "rbxassetid://13364900349" })
+local TrollTab = Window:MakeTab({ Title = "سكربتات تخريب", Icon = "rbxassetid://13364900349" })
 
 
-TrollTab:AddSection({ "Black Hole" })
+TrollTab:AddSection({ "ثقب اسود" })
 TrollTab:AddButton({
-    Name = "Black Hole",
-    Description = " Ativando isso você puxa Parts até o seu personagem",
+    Name = "ثقب اسود للاجزاء",
+    Description = " يسحب الاجزاء المتحركة",
     Callback = function()
         local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -1398,12 +1398,12 @@ toggleBlackHole()
 })
 
 
-TrollTab:AddSection({ "Puxar Parts" })
+TrollTab:AddSection({ "سكربت الابواب" })
 TrollTab:AddButton({
-    Name = "Puxar Parts",
-    Description = "Para usar, chegue perto do Player Selecionado",
+    Name = "سكربت ابواب",
+    Description = "اكتب هنا اسم لاعب وشغل اذا نا صار شي فعل طيران وجمع ابواب ",
     Callback = function()
-        -- Gui to Lua
+        -- Gui to
 -- Version: 3.2
 
 -- Instances:
@@ -1646,11 +1646,11 @@ coroutine.wrap(JUBNQKI_fake_script)()
     end
 })
 
-TrollTab:AddSection({ "Invisível" })
+TrollTab:AddSection({ "اختفاء" })
 
 TrollTab:AddButton({
-    Name = "Ficar Invisível",
-    Description = "Ficar invisível FE",
+    Name = "اختفاء",
+    Description = "سكن مخفي حقيقي",
 Callback = function()
         
         local args = {
@@ -1696,7 +1696,7 @@ end
 })
 
 
-TrollTab:AddSection({ "Avatar RGB" })
+TrollTab:AddSection({ "بشرة ملونة" })
 
 local colors = { "Bright red", "Lime green", "Bright blue", "Bright yellow", "Bright cyan", "Hot pink", "Royal purple" }
 local rgbEnabled = false
@@ -1720,8 +1720,8 @@ local function toggleRGBCharacter(enabled)
 end
 
 TrollTab:AddToggle({
-    Name = "RGB Character",
-    Description = "Deixa seu personagem RGB",
+    Name = "تلوين البشرة",
+    Description = "RGB",
     Default = false,
     Callback = function(value)
         toggleRGBCharacter(value)
@@ -1729,7 +1729,7 @@ TrollTab:AddToggle({
 })
 
 
-TrollTab:AddSection({ "Cabelo RGB" })
+TrollTab:AddSection({ "تلوين الشعر" })
 local hairColors = {
     Color3.new(1, 1, 0), Color3.new(0, 0, 1), Color3.new(1, 0, 1), Color3.new(1, 1, 1),
     Color3.new(0, 1, 0), Color3.new(0.5, 0, 1), Color3.new(1, 0.647, 0), Color3.new(0, 1, 1)
@@ -1750,8 +1750,8 @@ end
 
 
 TrollTab:AddToggle({
-    Name = "Cabelo RGB",
-    Description = "Deixa Seu Cabelo RGB",
+    Name = "شعر ملون",
+    Description = "",
     Default = false,
     Callback = function(value)
         isActive = value
@@ -1763,10 +1763,10 @@ TrollTab:AddToggle({
 
 
 -- Tab 4: Anti Sit
-TrollTab:AddSection({ "Anti Sit" })
+TrollTab:AddSection({ "" })
 TrollTab:AddToggle({
-    Name = "Anti Sit",
-    Description = "Não Deixa seu personagem Sentar",
+    Name = "مضاد جلوس",
+    Description = "",
     Default = false,
     Callback = function(Value)
         local player = game.Players.LocalPlayer
