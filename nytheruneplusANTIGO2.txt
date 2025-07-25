@@ -826,7 +826,7 @@ local InfoTab = Window:MakeTab({ Title = "Info", Icon = "rbxassetid://1072341590
 InfoTab:AddDiscordInvite({
     Name = "DemozXمطورين",
     Description = "تليجرام",
-    Logo = "rbxassetid://رقم",
+    Logo = "rbxassetid://109596885589960",
     Invite = "https://t.me/R_amI11",
 })
 InfoTab:AddSection({ "معلومات السكربت" })
