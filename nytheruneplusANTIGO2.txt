@@ -810,8 +810,8 @@ local Libary = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao14
 workspace.FallenPartsDestroyHeight = -math.huge
 
 local Window = Libary:MakeWindow({
-    Title = "🌌 Nytherune Hub + 🌌 - Nytherune Developers Brookhaven",
-    SubTitle = "by: Nytherune Developers (Sajwaad, GHIM_HUB, )",
+    Title = "👹DemoZHub - فريق",
+    SubTitle = "by: مطورين Developers (Sajwaad, GHIM_HUB, )",
     LoadText = "DemoZHub Developers",
     Flags = "DemoZ_Brookhaven"
 })
@@ -826,7 +826,7 @@ local InfoTab = Window:MakeTab({ Title = "Info", Icon = "rbxassetid://1072341590
 InfoTab:AddDiscordInvite({
     Name = "DemozXمطورين",
     Description = "تليجرام",
-    Logo = "rbxassetid://18751483361",
+    Logo = "rbxassetid://رقم",
     Invite = "https://t.me/R_amI11",
 })
 InfoTab:AddSection({ "معلومات السكربت" })
