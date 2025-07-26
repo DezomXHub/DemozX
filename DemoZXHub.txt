@@ -1831,7 +1831,7 @@ TrollTab:AddToggle({
     end
 })
 
-local Troll = Window:MakeTab({ Title = "Troll Players", Icon = "rbxassetid://131153193945220" })
+local Troll = Window:MakeTab({ Title = "تخريب على اللاعبين", Icon = "rbxassetid://131153193945220" })
 
 
 local Players = game:GetService("Players")
@@ -2295,7 +2295,7 @@ end
     })
 
     Troll:AddButton({
-        Name = "Teleportar até o Player",
+        Name = "انتقال للاعب",
         Callback = function()
             if not selectedPlayerName or not Players:FindFirstChild(selectedPlayerName) then
                 print("Erro: Player não selecionado ou não existe")
@@ -2318,7 +2318,7 @@ end
     })
 
     Troll:AddToggle({
-        Name = "Spectar Player",
+        Name = "تجسس على اللاعب",
         Default = false,
         Callback = function(value)
             local Camera = workspace.CurrentCamera
@@ -2356,11 +2356,11 @@ end
         end
     })
 
-    local MethodSection = Troll:AddSection({ Name = "Métodos" })
+    local MethodSection = Troll:AddSection({ Name = "القتل" })
 
     Troll:AddDropdown({
         Name = "Selecionar Método para Matar",
-        Options = {"Bus", "Couch", "Couch Sem ir até o alvo [BETA]"},
+        Options = {"باص", "قتل betaكنبة", "كنبة بلوتوث تقتل وحدها"},
         Default = "",
         Callback = function(value)
             methodKill = value
