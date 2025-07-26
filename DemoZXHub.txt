@@ -2270,7 +2270,7 @@ end
     })
 
     Troll:AddButton({
-        Name = "قائمة اللاعبين",
+        Name = "تحديث قائمة اللاعبين",
         Callback = function()
             local tablePlayers = Players:GetPlayers()
             local newPlayers = {}
@@ -2359,8 +2359,8 @@ end
     local MethodSection = Troll:AddSection({ Name = "القتل" })
 
     Troll:AddDropdown({
-        Name = "Selecionar Método para Matar",
-        Options = {"باص", "قتل betaكنبة", "كنبة بلوتوث تقتل وحدها"},
+        Name = "اختار طريقة القتل",
+        Options = {"باص", "قتل كنبة", "كنبة بلوتوث تقتل وحدها"},
         Default = "",
         Callback = function(value)
             methodKill = value
@@ -2369,7 +2369,7 @@ end
     })
 
     Troll:AddButton({
-        Name = "Matar Player",
+        Name = "تفعيل القتل",
         Callback = function()
             if not selectedPlayerName or not Players:FindFirstChild(selectedPlayerName) then
                 print("Erro: Player não selecionado ou não existe")
