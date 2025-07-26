@@ -2244,7 +2244,7 @@ local function KillWithCouch()
     if bv then bv:Destroy() end
     ReplicatedStorage.RE["1Clea1rTool1s"]:FireServer("ClearAllTools")
 end
-    local PlayerSection = Troll:AddSection({ Name = "Troll Player" })
+    local PlayerSection = Troll:AddSection({ Name = "تخريب على اللاعبين" })
 
     -- Função para obter lista de jogadores
     local function getPlayerList()
@@ -2259,7 +2259,7 @@ end
     end
 
     local killDropdown = Troll:AddDropdown({
-        Name = "Selecionar Jogador",
+        Name = "اختيار لاعب",
         Options = getPlayerList(),
         Default = "",
         Callback = function(value)
@@ -2270,7 +2270,7 @@ end
     })
 
     Troll:AddButton({
-        Name = "Atualizar Player List",
+        Name = "قائمة اللاعبين",
         Callback = function()
             local tablePlayers = Players:GetPlayers()
             local newPlayers = {}
@@ -2281,7 +2281,7 @@ end
                     end
                 end
                 killDropdown:Set(newPlayers)
-                print("Lista de jogadores atualizada: ", table.concat(newPlayers, ", "))
+                print("تحديث قائمة اللاعبين: ", table.concat(newPlayers, ", "))
                 if selectedPlayerName and not Players:FindFirstChild(selectedPlayerName) then
                     selectedPlayerName = nil
                     getgenv().Target = nil
