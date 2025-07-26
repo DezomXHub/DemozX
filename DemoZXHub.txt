@@ -2360,9 +2360,9 @@ end
 
     Troll:AddDropdown({
         Name = "اختار طريقة القتل",
-        Options = {"باص", "قتل كنبة", "كنبة بلوتوث تقتل وحدها"},
-        Default = "",
-        Callback = function(value)
+        Options = {"Bus", "Couch", "Couch Sem ir até o alvo [BETA]"},
+    Default = "",
+    Callback = function(value)
             methodKill = value
             print("Método selecionado: " .. tostring(value))
         end
