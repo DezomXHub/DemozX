@@ -2360,7 +2360,7 @@ end
 
     Troll:AddDropdown({
         Name = "اختار طريقة القتل",
-        Options = {"Bus", "Couch", "Couch Sem ir até o alvo [BETA]"},
+        Options = {"Bus", "Couch", "كنبة بلوتوث"},
     Default = "",
     Callback = function(value)
             methodKill = value
@@ -2377,7 +2377,7 @@ end
             end
             if methodKill == "Couch" then
                 KillPlayerCouch()
-            elseif methodKill == "Couch Sem ir até o alvo [BETA]" then
+            elseif methodKill == "كنبة بلوتوث" then
                 KillWithCouch()
             else
                 -- Método de ônibus
@@ -2473,7 +2473,7 @@ end
     })
 
     Troll:AddButton({
-        Name = "Puxar Player",
+        Name = "سحب اللاعب",
         Callback = function()
             if not selectedPlayerName or not Players:FindFirstChild(selectedPlayerName) then
                 print("Erro: Player não selecionado ou não existe")
@@ -2481,7 +2481,7 @@ end
             end
             if methodKill == "Couch" then
                 BringPlayerLLL()
-            elseif methodKill == "Couch Sem ir até o alvo [BETA]" then
+            elseif methodKill == "كنبة بلوتوث" then
                 BringWithCouch()
             else
                 -- Método de ônibus
@@ -2729,7 +2729,7 @@ local function houseBanKill()
 end
 
 Troll:AddButton({
-    Name = "House Ban Kill",
+    Name = "قتل باند البيت",
     Callback = houseBanKill
 })
 
@@ -2741,7 +2741,7 @@ local viewing = false
 local flingActive = false
 
 Troll:AddToggle({
-    Name = "Auto Fling ",
+    Name = "تطيير تلقائي ",
     Default = false,
     Callback = function(state)
 
@@ -2903,7 +2903,7 @@ end
 end
 
 Troll:AddButton({
-    Name = "Fling Ball",
+    Name = "تطيير بالكرة⚾",
     Callback = function()
         FlingBall(game:GetService("Players")[selectedPlayerName])
     end
@@ -3275,10 +3275,10 @@ Troll:AddButton({
     end
 })
 
-local kill = Troll:AddSection({Name = "Click Kill Methods"})
+local kill = Troll:AddSection({Name = "قتل بالنقر على اللاعب"})
 
 Troll:AddButton({
-  Name = "Click Fling Portas [Beta]",
+  Name = "قتل بالابواب [Beta]",
 Description = "Para Usar, Recomendo chegar perto de outras portas, apos ela ir até você, clique no jogador que deseja flingar",
   Callback = function()
 local Players = game:GetService("Players")
@@ -3421,7 +3421,7 @@ end)
 })
 
 Troll:AddButton({
-  Name = "Click Fling Admin [Beta]",
+  Name = "قتل ب اداة غريبة لازم تنزل تحت الماب وتجيك [Beta]",
   Callback = function()
     local Players = game:GetService("Players")
     local Workspace = game:GetService("Workspace")
@@ -3564,7 +3564,7 @@ Troll:AddButton({
 })
 
 Troll:AddButton({
-    Name = "Click Fling Couch (Tool)",
+    Name = "قتل ب ضغطة بالكنبة (اداة)",
     Callback = function()
 
 local jogadores = game:GetService("Players")
@@ -3700,7 +3700,7 @@ end
 })
 
 Troll:AddButton({
-    Name = "Click Fling Ball (Tool)",
+    Name = "قتل ضغطة بالكرة (اداة)",
     Callback = function()
 local jogadores = game:GetService("Players")
 local rep = game:GetService("ReplicatedStorage")
@@ -3823,7 +3823,7 @@ end
 })
 
 Troll:AddButton({
-    Name = "Click Fling Admin v2 (Tool)",
+    Name = "قتل Admin v2 (اداة)",
     Callback = function()
         local jogadores = game:GetService("Players")
         local rep = game:GetService("ReplicatedStorage")
@@ -3951,7 +3951,7 @@ Troll:AddButton({
 })
 
 Troll:AddButton({
-    Name = "Click Kill Couch (Tool)",
+    Name = "قتل ضغطة كنبة (Tool)",
     Callback = function()
 
 local jogadores = game:GetService("Players")
@@ -4140,10 +4140,10 @@ end)
 end
 })
 
-local kill = Troll:AddSection({Name = "All methods"})
+local kill = Troll:AddSection({Name = "قتل الكل"})
 
 Troll:AddButton({
-    Name = "Kill All Bus",
+    Name = "قتل الكل بالباص",
     Callback = function()
         local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
@@ -4280,7 +4280,7 @@ PerformActionForAllPlayers(Players:GetPlayers())
 print("Kill All Bus button created")
 
 Troll:AddButton({
-    Name = "House Ban kill All",
+    Name = "قتل الكل باند البيت",
     Callback = function()
         local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -5131,7 +5131,7 @@ end)
 print("Kill All Couch button created")  
 
 Troll:AddButton({
-    Name = "Fling Ball all",
+    Name = "قتل الكل كرة",
     Callback = function()
 local player=game:GetService("Players").LocalPlayer
 local SoccerBalls=workspace.WorkspaceCom["001_SoccerBalls"]
@@ -5230,7 +5230,7 @@ end
 
 -- Dropdown de seleÃ§Ã£o de jogador
 local Dropdown = Tab:AddDropdown({
-    Name = "Selecionar Jogador",
+    Name = "اختار لاعب",
     Options = GetPlayerNames(),
     Default = Target,
     Callback = function(Value)
@@ -5720,7 +5720,7 @@ function startAutoUnban()
     end
 end
 
-local Tab = Window:MakeTab({"Audio All", "music"})
+local Tab = Window:MakeTab({"Music", "اغاني مجانية"})
 
 -- Create a section
 Tab:AddSection({"Audio Todos os Players"})
@@ -5838,7 +5838,7 @@ end
 
 -- Toggle para loop de áudio
 Tab:AddToggle({
-    Name = "Loop Tocar Áudio",
+    Name = "تفعيل اغنية تلقائي",
     Description = "Ativa o loop do áudio",
     Default = false,
     Flag = "audio_loop",
@@ -6059,7 +6059,7 @@ end
 
 -- Lag Laptop Toggle
 Tab:AddToggle({
-    Name = "Lag com Laptop (trava muito)",
+    Name = "لاق بالابتوب",
     Default = false,
     Callback = function(state)
         toggles.LagLaptop = state
@@ -6080,13 +6080,13 @@ Tab:AddToggle({
 
 -- Lag Laptop Paragraph
 Tab:AddParagraph({
-    "Informação de Lag",
+    "تشغيل لاق لابتوب",
     "O efeito de lag começa após 20 segundos"
 })
 
 -- Lag Phone Section
 local Section = Tab:AddSection({
-    Name = "Lag com Telefone"
+    Name = "لاق بالهاتف"
 })
 
 -- Toggle State for Lag Phone
