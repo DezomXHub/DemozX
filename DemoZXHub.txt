@@ -1861,7 +1861,7 @@ end
 TrollTab:AddTextBox({
     Name = "رسبن طيارات عل وادم",
     Description = "اقوى طيارات اريد",
-    PlaceholderText = "Exemplo: wx = wx yan",
+    PlaceholderText = "اكتب اسم لاعب",
     Callback = function(Value)
         local input = Value:lower()
         if input ~= "" then
@@ -1879,7 +1879,7 @@ TrollTab:AddTextBox({
     end
 })
 
-TrollTab:AddParagraph({"Script original do DemoZHub"})
+TrollTab:AddParagraph({"صنع بواسطة فريق المطورين جحيم+رامي"})
 
 TrollTab:AddButton({
     Name = "اصمطهم بطيارة",
@@ -1889,23 +1889,23 @@ TrollTab:AddButton({
 })
 
 TrollTab:AddButton({
-    Name = "Parar Spamming de Avião",
+    Name = "ايقاف",
     Callback = function()
         stopLoop1()
     end
 })
 
-TrollTab:AddSection({"Jogador selecionado no textbox a cima, para ser jatado hehehe!"})
+TrollTab:AddSection({"حبيبي إذا علقت شيل الطيارة وارجع فعل"})
 
 TrollTab:AddButton({
-    Name = "Iniciar Spamming no Jogador BETA",
+    Name = "سبام طيارات على اللاعبين",
     Callback = function()
         startLoop2()
     end
 })
 
 TrollTab:AddButton({
-    Name = "Parar Spamming no Jogador BETA",
+    Name = "وقف السبام",
     Callback = function()
         stopLoop2()
     end
