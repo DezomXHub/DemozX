@@ -1859,8 +1859,8 @@ end
 
 --  - Tab10
 TrollTab:AddTextBox({
-    Name = "Nome do Jogador",
-    Description = "Digite o nome do jogador para spawnar o jato nele",
+    Name = "رسبن طيارات عل وادم",
+    Description = "اقوى طيارات اريد",
     PlaceholderText = "Exemplo: wx = wx yan",
     Callback = function(Value)
         local input = Value:lower()
@@ -1882,7 +1882,7 @@ TrollTab:AddTextBox({
 TrollTab:AddParagraph({"Script original do DemoZHub"})
 
 TrollTab:AddButton({
-    Name = "Iniciar Spamming de Avião",
+    Name = "اصمطهم بطيارة",
     Callback = function()
         startLoop1()
     end
@@ -1933,7 +1933,7 @@ local Vehicles = workspace:WaitForChild("Vehicles")
 -- Aviso no chat
 if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then 
     TextChatService.TextChannels.RBXGeneral:SendAsync(
-        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️AVISO] ارگع demovالسيرفر بسكربت"
+        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️سفينة ترگعكم] ارگع demovالسيرفر بسكربت"
     )
 else 
     print("Nadaa")
