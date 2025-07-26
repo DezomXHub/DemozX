@@ -1638,7 +1638,7 @@ TrollTab:AddParagraph({"زر مالة فايدة"})
     
 TrollTab:AddParagraph({"*"})
     
-TrollTab:AddSection({"Spamming de Avião - ✅🙏"})
+TrollTab:AddSection({"Spamming de Avião - "})
 
    local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
@@ -1879,7 +1879,7 @@ TrollTab:AddTextBox({
     end
 })
 
-TrollTab:AddParagraph({"Script original do Coquette"})
+TrollTab:AddParagraph({"Script original do DemoZHub"})
 
 TrollTab:AddButton({
     Name = "Iniciar Spamming de Avião",
@@ -1918,8 +1918,8 @@ end -- Fim do bloco de scripts
 
 TrollTab:AddSection({ "Desastres naturais" })
 TrollTab:AddButton({
-    Name = "[⚠️ MUITO OP] Tornado - Navio pirata GRANDE",
-    Description = "Isso é melhor quando usado em cities, confia no Wx!",
+    Name = "[⚠️ جيب سفينه واطبگها بالشارع]",
+    Description = "ماكو شي بس سفينة ترگع ام السيرفر",
     Callback = function()
 local RS = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -1933,7 +1933,7 @@ local Vehicles = workspace:WaitForChild("Vehicles")
 -- Aviso no chat
 if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then 
     TextChatService.TextChannels.RBXGeneral:SendAsync(
-        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️AVISO] UM TORNADO SURGIU! Nytherune Hub by Wx"
+        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️AVISO] ارگع demovالسيرفر بسكربت"
     )
 else 
     print("Nadaa")
@@ -2065,8 +2065,8 @@ end
 })
 
 TrollTab:AddButton({
-    Name = "[🛑] Desativar Tornado e Remover Veículo",
-    Description = "Cancela o tornado e deleta seu navio.",
+    Name = "[🛑] شيل السفينة",
+    Description = "ازالة السفينة كافي خطية.",
     Callback = function()
         -- Tenta remover o veículo via RemoteEvent
         local success, err = pcall(function()
