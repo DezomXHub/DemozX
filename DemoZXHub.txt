@@ -851,8 +851,8 @@ InfoTab:AddButton({
 local autoTab = Window:MakeTab({ Title = " (معطل)الحدث الجديد", Icon = "rbxassetid://10734983868" })
 
 
-autoTab:AddSection({ "اوتو فارم" })
-autoTab:AddParagraph({"اوتو فارم تكت.مو شغال"})
+autoTab:AddSection({ "قسم فارغ" })
+autoTab:AddParagraph({""})
 
 local shadersTab = Window:MakeTab({ Title = "شادر (يظهر بس عندك)", Icon = "rbxassetid://10747382750" })
 
@@ -2360,7 +2360,7 @@ end
 
     Troll:AddDropdown({
         Name = "اختار طريقة القتل",
-        Options = {"Bus", "Couch", "كنبة بلوتوث"},
+        Options = {"باص", "كنبة", "كنبة بلوتوث"},
     Default = "",
     Callback = function(value)
             methodKill = value
@@ -2375,7 +2375,7 @@ end
                 print("Erro: Player não selecionado ou não existe")
                 return
             end
-            if methodKill == "Couch" then
+            if methodKill == "كنبة" then
                 KillPlayerCouch()
             elseif methodKill == "كنبة بلوتوث" then
                 KillWithCouch()
@@ -2479,7 +2479,7 @@ end
                 print("Erro: Player não selecionado ou não existe")
                 return
             end
-            if methodKill == "Couch" then
+            if methodKill == "كنبة" then
                 BringPlayerLLL()
             elseif methodKill == "كنبة بلوتوث" then
                 BringWithCouch()
@@ -3108,10 +3108,10 @@ local function ActiveAutoFling(targetPlayer)
     end
 end
 
-local kill = Troll:AddSection({Name = "Fling Boat"})
+local kill = Troll:AddSection({Name = "قتل قارب"})
 
 Troll:AddButton({
-    Name = "Fling - Boat",
+    Name = "تطيير قارب",
     Callback = function()
         if not selectedPlayerName or not game.Players:FindFirstChild(selectedPlayerName) then
             warn("Nenhum jogador selecionado ou não existe")
@@ -3216,7 +3216,7 @@ Troll:AddButton({
 print("Fling - Boat button created")
 
 Troll:AddButton({
-    Name = "Desligar Fling - Boat",
+    Name = "تعطيل القارب",
     Callback = function()
         local Player = game.Players.LocalPlayer
         local Character = Player.Character
@@ -4556,7 +4556,7 @@ Troll:AddButton({
 print("Fling Boat All button created")
 
 Troll:AddButton({
-    Name = "Auto Fling All",
+    Name = "تطيير الكل تلقائي",
     Callback = function()
     local Players = game:GetService("Players")
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -4657,7 +4657,7 @@ task.wait(0.25)
 })
 
 Troll:AddButton({
-    Name = "Bring All Couch [melhor]",
+    Name = "سحب الكل كنبة [ممكن مايصير]",
     Callback = function()
         local args = {
     [1] = "ClearAllTools"
@@ -4881,7 +4881,7 @@ end
 print("Bring All Couch button created")
 
 Troll:AddButton({
-    Name = "Kill All Couch [melhor]",
+    Name = "قتل الكل كنبة [ممكن مايصير]",
     Callback = function()
         local args = {
     [1] = "ClearAllTools"
@@ -5207,9 +5207,9 @@ workspace.CurrentCamera.CameraSubject=game.Players.LocalPlayer.Character:WaitFor
 })
 
 
-local Tab = Window:MakeTab({"Avatar", "rbxassetid://10734952036"})
+local Tab = Window:MakeTab({"السكن", "rbxassetid://10734952036"})
 
-Tab:AddSection({ Name = "Copiar Skin" })
+Tab:AddSection({ Name = "نسخ السكن" })
 
 
 
@@ -5247,7 +5247,7 @@ Players.PlayerAdded:Connect(UpdateDropdown)
 Players.PlayerRemoving:Connect(UpdateDropdown)
 
 Tab:AddButton({
-    Name = "Copiar Avatar",
+    Name = "نسخ السكن",
     Callback = function()
         if not Target then return end
 
@@ -5411,7 +5411,7 @@ end
 
 -- Variáveis globais
 local isUnbanActive = false
-local HouseTab = Window:MakeTab({"Casas", "home"})
+local HouseTab = Window:MakeTab({"بيت", "home"})
 local SelectHouse = nil
 local NoclipDoor = nil
 
@@ -5482,7 +5482,7 @@ end)
 -- Botão para teleportar para casa
 pcall(function()
     HouseTab:AddButton({
-        Name = "Teleportar para Casa",
+        Name = "انتقال للبيت",
         Callback = function()
             local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
             if House and game.Players.LocalPlayer.Character then
@@ -5687,13 +5687,13 @@ end)
 
 -- Seção para Casa RGB
 pcall(function()
-    HouseTab:AddSection({ Name = "Casa RGB" })
+    HouseTab:AddSection({ Name = "تلوين بيت" })
 end)
 
 -- Toggle para Casa RGB
 pcall(function()
     HouseTab:AddToggle({
-        Name = "Casa RGB",
+        Name = "تلوين البيت",
         Default = false,
         Callback = function(state)
             toggleHouseRGB(state)
@@ -5720,30 +5720,30 @@ function startAutoUnban()
     end
 end
 
-local Tab = Window:MakeTab({"Music", "اغاني مجانية"})
+local Tab = Window:MakeTab({"اغاني مجانية", "Music"})
 
 -- Create a section
-Tab:AddSection({"Audio Todos os Players"})
+Tab:AddSection({"تشغيل الصوت للكل"})
 
 -- Lista de áudios
 local audios = {
-    {Name = "Yamete Kudasai", ID = 108494476595033},
-    {Name = "Gritinho", ID = 5710016194},
-    {Name = "Jumpscare Horroroso", ID = 85435253347146},
-    {Name = "Áudio Alto", ID = 6855150757},
-    {Name = "Ruído", ID = 120034877160791},
-    {Name = "Jumpscare 2", ID = 110637995610528},
-    {Name = "Risada Da Bruxa Minecraft", ID = 116214940486087},
-    {Name = "The Boiled One", ID = 137177653817621},
+    {Name = "ياميتي كوداساي", ID = 108494476595033},
+    {Name = "صراخ", ID = 5710016194},
+    {Name = "مخيف", ID = 85435253347146},
+    {Name = "صوت عالي", ID = 6855150757},
+    {Name = "تشويش", ID = 120034877160791},
+    {Name = "صراخ 2", ID = 110637995610528},
+    {Name = "ماينكرافت", ID = 116214940486087},
+    {Name = "لعبان نفس", ID = 137177653817621},
     {Name = "Deitei Um Ave Maria Doido", ID = 128669424001766},
     {Name = "Mandrake Detected", ID = 9068077052},
-    {Name = "Aaaaaaaaa", ID = 80156405968805},
-    {Name = "AAAHHHH", ID = 9084006093},
-    {Name = "amongus", ID = 6651571134},
-    {Name = "Sus", ID = 6701126635},
+    {Name = "ااااااااع", ID = 80156405968805},
+    {Name = "اااااااه", ID = 9084006093},
+    {Name = "امونق اس", ID = 6651571134},
+    {Name = "سوس", ID = 6701126635},
     {Name = "Gritao AAAAAAAAA", ID = 5853668794},
-    {Name = "UHHHHH COFFCOFF", ID = 7056720271},
-    {Name = "SUS", ID = 7153419575},
+    {Name = "ااااااه", ID = 7056720271},
+    {Name = "سوس٢", ID = 7153419575},
     {Name = "Sonic.exe", ID = 2496367477},
     {Name = "Tubers93 1", ID = 270145703},
     {Name = "Tubers93 2", ID = 18131809532},
@@ -5752,7 +5752,7 @@ local audios = {
     {Name = "Grito", ID = 80156405968805},
     {Name = "audio estranho", ID = 7705506391},
     {Name = "AAAH", ID = 7772283448},
-    {Name = "Gay, gay", ID = 18786647417},
+    {Name = "Gay, گي", ID = 18786647417},
     {Name = "Bat Hit", ID = 7129073354},
     {Name = "Nuclear Siren", ID = 675587093},
     {Name = "Sem ideia de nome KK", ID = 7520729342},
@@ -5791,8 +5791,8 @@ for _, audio in ipairs(audios) do
 end
 
 Tab:AddDropdown({
-    Name = "Selecione o Áudio",
-    Description = "Escolha um áudio da lista",
+    Name = "اختار صوت",
+    Description = "اختيار صوت من القائمة",
     Options = audioNames,
     Default = audioNames[1],
     Flag = "selected_audio",
@@ -5931,8 +5931,8 @@ end
 
 -- Toggle para "Estorar ouvido de geral"
 Tab:AddToggle({
-    Name = "Estorar ouvido de geral KK",
-    Description = "Toca áudio repetidamente para todos",
+    Name = "صوت يشگ الاذان",
+    Description = "صوت قوي متكرر",
     Default = false,
     Flag = "audio_spam",
     Callback = function(value)
@@ -5948,22 +5948,22 @@ Tab:AddToggle({
     end
 })
 
-Tab:AddParagraph({"Info", "Todos do server ouvem o áudio"})
+Tab:AddParagraph({"Info", "صوت للكل"})
 
 
-local Tab = Window:MakeTab({"Lag Server", "bomb"})
+local Tab = Window:MakeTab({"لاق للسيرفر", "bomb"})
 
 
 -- Shutdown Custom Section
 local Section = Tab:AddSection({
-    Name = "Lags Experimentais"
+    Name = "لاق مؤقت("
 })
 
 local runLag = false
 local lagCoroutine
 
 Tab:AddToggle({
-    Name = "Lag com Ônibus",
+    Name = "لاق باص",
     Default = false,
     Callback = function(Value)
         runLag = Value
@@ -6028,7 +6028,7 @@ Tab:AddToggle({
 
 -- Lag Laptop Section
 local Section = Tab:AddSection({
-    Name = "Lag com Laptop"
+    Name = "لاق بالابتوب"
 })
 
 -- Toggle State for Lag Laptop
@@ -6271,7 +6271,7 @@ spawn(function()
 end)
 
 local SectionNames = Tab:AddSection({
-    Name = "Adicionar Nomes no Jogador"
+    Name = "اسماء"
 })
 
 local names = {
@@ -6299,7 +6299,7 @@ for _, name in ipairs(names) do
 end
 
 
-local CarTab = Window:MakeTab({"Carro", "car"})
+local CarTab = Window:MakeTab({"السيارة", "car"})
 
 -- Colors for RGB
 local colors = {
@@ -6336,7 +6336,7 @@ local function changeCarColor()
 end
 
 CarTab:AddButton({
-    Name = "Remove All Cars",
+    Name = "حذف كل السيارات",
     Callback = function()
         local ofnawufn = false
 
@@ -6505,7 +6505,7 @@ local function ChangeCarSpeedAndTurbo(speedValue, turboValue)
 end
 
 CarTab:AddTextBox({
-    Name = "Speed",
+    Name = "السرعة",
     PlaceholderText = "50",
     Callback = function(value)
         local newSpeed = tonumber(value)
@@ -6516,7 +6516,7 @@ CarTab:AddTextBox({
 })
 
 CarTab:AddTextBox({
-    Name = "Turbo",
+    Name = "تيربو",
     PlaceholderText = "50",
     Callback = function(value)
         local newTurbo = tonumber(value)
@@ -6527,7 +6527,7 @@ CarTab:AddTextBox({
 })
 
 CarTab:AddTextBox({
-    Name = "Drift",
+    Name = "تفحيط",
     PlaceholderText = "50",
     Callback = function(value)
         local args = {
@@ -6546,10 +6546,10 @@ CarTab:AddButton({
 })
 
 -- Turbo V2 Section
-local TurboSection = CarTab:AddSection({"Turbo V2"})
+local TurboSection = CarTab:AddSection({"تيربوV2"})
 
 CarTab:AddButton({
-    Name = "Turbo V2 [Melhor]",
+    Name = "تيربوV2 [Melhor]",
     Callback = function()
      local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
@@ -6731,7 +6731,7 @@ CarTab:AddTextBox({
 })
 
 CarTab:AddDropdown({
-    Name = "Select Music (Gamepass Required)",
+    Name = "اختار موسيقى (Gamepass Required)",
     Options = musicIds,
     Callback = function(value)
         playCarMusic(value)
@@ -6743,10 +6743,10 @@ CarTab:AddDropdown({
 CarTab:AddParagraph({"Note", "O script de música funciona em todos os carros e casas"})
 
 -- Car RGB Section
-local RGBSection = CarTab:AddSection({"Car RGB"})
+local RGBSection = CarTab:AddSection({"تلوين السيارة"})
 
 CarTab:AddToggle({
-    Name = "Car RGB",
+    Name = "سيارة ملونة",
     Default = false,
     Callback = function(state)
         isColorChanging = state
@@ -6757,10 +6757,10 @@ CarTab:AddToggle({
     end
 })
 
-CarTab:AddParagraph({"Note", "Ativando isso deixará seu carro RGB"})
+CarTab:AddParagraph({"ملاحظة", "الإكثار عليه باند"})
 
 -- Spam Horn Section
-local HornSection = CarTab:AddSection({"Spam Horn"})
+local HornSection = CarTab:AddSection({"سبام هورن"})
 
 local spamming = false
 local args = {"Horn"}
@@ -6773,7 +6773,7 @@ local function spamHorn()
 end
 
 CarTab:AddToggle({
-    Name = "Spam Horn",
+    Name = "سبام هورن",
     Default = false,
     Callback = function(value)
         spamming = value
@@ -6784,10 +6784,10 @@ CarTab:AddToggle({
 })
 
 -- Fly Car Section
-local FlySection = CarTab:AddSection({"Fly Car"})
+local FlySection = CarTab:AddSection({"طيران سيارة"})
 
 CarTab:AddButton({
-    Name = "Fly Car",
+    Name = "طيران سيارة",
     Callback = function()
         --by Luscaa
 -- Version: 4.1
@@ -6812,7 +6812,7 @@ local S = Instance.new("TextButton")
 
 --Properties:
 
-Flymguiv2.Name = "Car Fly gui v2"
+Flymguiv2.Name = "طيران سيار من صنع رامي"
 Flymguiv2.Parent = game.CoreGui
 Flymguiv2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -7143,10 +7143,10 @@ end)
     end
 })
 
-CarTab:AddParagraph({"Note", "Ativando isso você pode voar com o seu carro"})
+CarTab:AddParagraph({"Note", "هذا الزر يطير السيارة"})
 
 -- Spam Cars Section
-local SpamCarSection = CarTab:AddSection({"Spam Car"})
+local SpamCarSection = CarTab:AddSection({"سبام سيارات"})
 
 local carList = {
     "SchoolBus", "SmartCar", "FarmTruck", "Cadillac", "Excavator",
@@ -7165,7 +7165,7 @@ local function spawnCar(carName)
 end
 
 CarTab:AddToggle({
-    Name = "Spam Cars",
+    Name = "سبام سيارات",
     Default = false,
     Callback = function(state)
         spamCarsActive = state
@@ -7183,7 +7183,7 @@ CarTab:AddToggle({
     end
 })
 
-CarTab:AddParagraph({"Informação:", "Spamar vários carros"})
+CarTab:AddParagraph({"معلومة:", "يرسبن سيارات تتغير متنوعة"})
 
 
 
@@ -7204,16 +7204,16 @@ end
 updatePlayerList()
 
 -- Aba Child
-local ChildTab = Window:MakeTab({"Criança", "baby"})
+local ChildTab = Window:MakeTab({"زعاطيط", "baby"})
 
 local Section = ChildTab:AddSection({
-    Name = "Child"
+    Name = "زعطوط"
 })
 
-ChildTab:AddParagraph({"Informação:", "Os scripts daqui não são nossos, são os que o Venom adicionou aqui pra gente."}) 
+ChildTab:AddParagraph({"معلومة:", "هنا تدز زعاطيط للناس."}) 
 local chasingplayer = nil
 local playerChild = ChildTab:AddDropdown({
-    Name = "Selecione um player para perseguir",
+    Name = "اختار لاعب تدز الة زعطوط",
     Options = players,
     Default = "",
     Callback = function(selected)
@@ -7226,7 +7226,7 @@ local playerChild = ChildTab:AddDropdown({
 })
 
 ChildTab:AddButton({
-    Name = "Atualizar Player List",
+    Name = "حدث قائمة اللاعبين",
     Callback = function()
         local updatedPlayers = updatePlayerList()
         if playerChild and updatedPlayers then
@@ -7390,7 +7390,7 @@ ChildTab:AddToggle({
 })
 
 ChildTab:AddParagraph({
-    Title = "FE",
+    Title = "يظهر للناس",
     Content = "Funcionalidades FE"
 })
 
