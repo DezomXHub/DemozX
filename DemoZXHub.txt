@@ -830,7 +830,7 @@ InfoTab:AddDiscordInvite({
     Invite = "https://t.me/R_amI11",
 })
 InfoTab:AddSection({ "معلومات السكربت" })
-InfoTab:AddParagraph({ "المالك / المطورين:", "Rami (TikTok: .q.kn," })
+InfoTab:AddParagraph({ "المالك / المطورين:", "Rami+Ghim (TikTok: .q.kn,":ghim_hub })
 InfoTab:AddParagraph({ "فريق:", "Rami, GHIM_HUB" })
 InfoTab:AddParagraph({ ":", "DemoZHub" })
 InfoTab:AddParagraph({"عمل تجريبي سيتم تطويره"})
@@ -848,7 +848,7 @@ InfoTab:AddButton({
     end
 })
 
-local autoTab = Window:MakeTab({ Title = " (معطل)الحدث الجديد", Icon = "rbxassetid://10734983868" })
+local autoTab = Window:MakeTab({ Title = " قسم زائد", Icon = "rbxassetid://10734983868" })
 
 
 autoTab:AddSection({ "قسم فارغ" })
@@ -1638,7 +1638,7 @@ TrollTab:AddParagraph({"زر مالة فايدة"})
     
 TrollTab:AddParagraph({"*"})
     
-TrollTab:AddSection({"Spamming de Avião - "})
+TrollTab:AddSection({"تدبيل طيارت (تحتاج نجمة)- "})
 
    local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
@@ -1882,7 +1882,7 @@ TrollTab:AddTextBox({
 TrollTab:AddParagraph({"صنع بواسطة فريق المطورين جحيم+رامي"})
 
 TrollTab:AddButton({
-    Name = "اصمطهم بطيارة",
+    Name = "اصمط السبون كامل",
     Callback = function()
         startLoop1()
     end
@@ -1898,7 +1898,7 @@ TrollTab:AddButton({
 TrollTab:AddSection({"حبيبي إذا علقت شيل الطيارة وارجع فعل"})
 
 TrollTab:AddButton({
-    Name = "سبام طيارات على اللاعبين",
+    Name = "سبام طيارات على اللاعب اللي كتبت اسمه",
     Callback = function()
         startLoop2()
     end
@@ -1916,7 +1916,7 @@ TrollTab:AddButton({
 
 end -- Fim do bloco de scripts
 
-TrollTab:AddSection({ "Desastres naturais" })
+TrollTab:AddSection({ "زر سفينة لاستعراض قوتك" })
 TrollTab:AddButton({
     Name = "[⚠️ جيب سفينه واطبگها بالشارع]",
     Description = "ماكو شي بس سفينة ترگع ام السيرفر",
@@ -1933,7 +1933,7 @@ local Vehicles = workspace:WaitForChild("Vehicles")
 -- Aviso no chat
 if TextChatService.ChatVersion == Enum.ChatVersion.TextChatService then 
     TextChatService.TextChannels.RBXGeneral:SendAsync(
-        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️سفينة ترگعكم] ارگع demovالسيرفر بسكربت"
+        "hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r[⚠️سفينة ترگعكم] DemoZHubارگع السيرفر بسكربت"
     )
 else 
     print("Nadaa")
@@ -6116,7 +6116,7 @@ end
 -- Dropdown para selecionar casas
 pcall(function()
     HouseTab:AddDropdown({
-        Name = "Selecione a Casa",
+        Name = "اختيار بيت لاعب",
         Options = getHouseList(),
         Default = "...",
         Callback = function(Value)
