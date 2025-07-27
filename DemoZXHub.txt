@@ -807,7 +807,7 @@ TextChatService.OnIncomingMessage = function(message)
 end
 local args = {
 	"RolePlayName",
-	"DemoZ-HubV0"
+	"DemoZ-Hub V0.2"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
@@ -4655,13 +4655,20 @@ Troll:AddButton({
 })
 
 Troll:AddButton({
-  Name = " تجميد اي لاعب ب ضغطة[Beta]",
+  Name = " تجميد ب نقرةV2",
   Callback = function() 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
-local Player = Players.LocalPlayer
-local Mouse = Player:GetMouse()
+local LocalPlayer = Players.LocalPlayer
 
+-- إنشاء الأداة
+local tool = Instance.new("Tool")
+tool.Name = "GhimXRamiتجميد الناس"
+tool.RequiresHandle = false
+tool.CanBeDropped = false
+tool.Parent = LocalPlayer.Backpack
+
+-- المرجع للأحداث
 local RE = ReplicatedStorage:WaitForChild("RE")
 local ClearEvent = RE:FindFirstChild("1Clea1rTool1s")
 local ToolEvent = RE:FindFirstChild("1Too1l")
@@ -4683,13 +4690,13 @@ end
 
 -- التحقق من وجود السلاح
 local function hasAssault()
-	return Player.Backpack:FindFirstChild("Assault") ~= nil
+	return LocalPlayer.Backpack:FindFirstChild("Assault") ~= nil
 end
 
 -- إطلاق النار على جزء معين
 local function fireAtPart(targetPart)
-	local gunScript = Player.Backpack:FindFirstChild("Assault")
-		and Player.Backpack.Assault:FindFirstChild("GunScript_Local")
+	local gunScript = LocalPlayer.Backpack:FindFirstChild("Assault")
+		and LocalPlayer.Backpack.Assault:FindFirstChild("GunScript_Local")
 
 	if not gunScript or not targetPart then return end
 
@@ -4718,27 +4725,35 @@ local function fireAtPart(targetPart)
 	FireEvent:FireServer(unpack(args))
 end
 
--- تجهيز السلاح في البداية
-task.spawn(function()
-	while true do
-		clearAllTools()
-		getAssault()
-		repeat task.wait(0.2) until hasAssault()
-		break
-	end
-end)
+-- تعريف المتغيرات
+local mouse = LocalPlayer:GetMouse()
+local connection
 
--- عند الضغط بزر الماوس الأيسر على لاعب، يطلق عليه النار
-Mouse.Button1Down:Connect(function()
-	local target = Mouse.Target
-	if target then
-		local model = target:FindFirstAncestorOfClass("Model")
-		if model and Players:GetPlayerFromCharacter(model) and model:FindFirstChild("HumanoidRootPart") then
-			for i = 1, 3 do
-				fireAtPart(model.HumanoidRootPart)
-				task.wait(0.1)
+-- عند تجهيز الأداة
+tool.Equipped:Connect(function()
+	clearAllTools()
+	getAssault()
+	repeat task.wait(0.2) until hasAssault()
+
+	connection = mouse.Button1Down:Connect(function()
+		local target = mouse.Target
+		if target then
+			local model = target:FindFirstAncestorOfClass("Model")
+			if model and Players:GetPlayerFromCharacter(model) and model:FindFirstChild("HumanoidRootPart") then
+				for i = 1, 3 do
+					fireAtPart(model.HumanoidRootPart)
+					task.wait(0.1)
+				end
 			end
 		end
+	end)
+end)
+
+-- عند نزع الأداة من اليد
+tool.Unequipped:Connect(function()
+	if connection then
+		connection:Disconnect()
+		connection = nil
 	end
 end)
 end
