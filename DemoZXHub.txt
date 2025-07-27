@@ -6585,8 +6585,8 @@ local selectedAudioID
 
 -- Adicionar uma textbox para inserir o ID do áudio
 Tab:AddTextBox({
-    Name = "Insira o ID do Áudio ou Musica",
-    Description = "Digite o ID do áudio",
+    Name = "ادخال صوت الموسيقى",
+    Description = "الموسيقىIDاكتب ",
     PlaceholderText = "ID do áudio",
     Callback = function(value)
         selectedAudioID = tonumber(value)
@@ -6619,7 +6619,7 @@ Tab:AddDropdown({
 local audioLoop = false
 
 -- Nova seção para loop de áudio
-Tab:AddSection({"Loop de Audio"})
+Tab:AddSection({"تكرار أو سبام الصوت"})
 
 -- Função para tocar o áudio repetidamente
 local function playLoopedAudio()
@@ -6660,7 +6660,7 @@ Tab:AddToggle({
 })
 
 -- Adicionar um parágrafo como label
-Tab:AddParagraph({"Info", "Loop de tocar Áudio (Todos players do Server ouvem)"})
+Tab:AddParagraph({"Info", "تكرار الصوت (كل اللاعبين يسمعوه)"})
 
 -- Função para tocar o áudio normal
 local function playAudio()
@@ -6683,10 +6683,10 @@ local function playAudio()
 end
 
 -- Nova seção para tocar áudio
-Tab:AddSection({"Tocar Áudio"})
+Tab:AddSection({"تشغيل الصوت(مرة1) "})
 
 -- Botão para tocar o áudio
-Tab:AddButton({"Tocar Áudio", function()
+Tab:AddButton({"تشغيل", function()
     playAudio()
 end})
 
@@ -6890,7 +6890,7 @@ Tab:AddToggle({
 -- Lag Laptop Paragraph
 Tab:AddParagraph({
     "تشغيل لاق لابتوب",
-    "O efeito de lag começa após 20 segundos"
+    "انتظر حوالي 20 ثانية ليبدأ ثأثير اللاق"
 })
 
 -- Lag Phone Section
@@ -6918,7 +6918,7 @@ end
 
 -- Lag Phone Toggle
 Tab:AddToggle({
-    Name = "Lag excluído",
+    Name = "تشغيل اللاق",
     Default = false,
     Callback = function(state)
         toggles.LagPhone = state
@@ -6939,18 +6939,18 @@ Tab:AddToggle({
 
 -- Lag Phone Paragraph
 Tab:AddParagraph({
-    "O lag foi excluído"
+    "انتظر حوالي 20 ثانية ليبدأ تأثير اللاق"
 })
 
 local Section = Tab:AddSection({
-    Name = "Lag com Bomba"
+    Name = "لاق قنابل"
 })
 
 
 local BombActive = false
 
 Tab:AddToggle({
-    Name = "Lag com Bomba",
+    Name = "تشغيل لاق القنابل",
     Default = false,
     Callback = function(Value)
         if Value then
