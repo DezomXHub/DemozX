@@ -6451,7 +6451,7 @@ end)
 -- Dropdown para teletransporte
 pcall(function()
     HouseTab:AddDropdown({
-        Name = "Selecionar Casa",
+        Name = "اختيار بيت",
         Options = casasNomes,
         Callback = function(casaSelecionada)
             local player = game.Players.LocalPlayer
