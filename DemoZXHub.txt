@@ -6261,7 +6261,7 @@ local function DropdownHouseUpdate()
     pcall(function()
         HouseTab:ClearDropdown("Selecione a Casa") -- Tentar limpar dropdown, se suportado
         HouseTab:AddDropdown({
-            Name = "Selecione a Casa",
+            Name = "اختيار بيت",
             Options = Tabela,
             Default = "...",
             Callback = function(Value)
@@ -6280,7 +6280,7 @@ pcall(DropdownHouseUpdate)
 -- Botão para atualizar lista de casas
 pcall(function()
     HouseTab:AddButton({
-        Name = "Atualizar Lista de Casas",
+        Name = "تحديث قائمة البيوت",
         Callback = function()
             print("Atualizar Lista de Casas button clicked.")
             pcall(DropdownHouseUpdate)
@@ -6326,7 +6326,7 @@ end)
 -- Toggle para atravessar porta
 pcall(function()
     NoclipDoor = HouseTab:AddToggle({
-        Name = "Atravessar Porta da Casa",
+        Name = "اختراق الباب",
         Description = "",
         Default = false,
         Callback = function(Value)
@@ -6377,7 +6377,7 @@ end)
 -- Toggle para bater na porta
 pcall(function()
     HouseTab:AddToggle({
-        Name = "Bater na Porta",
+        Name = "طرق الباب",
         Description = "",
         Default = false,
         Callback = function(Value)
@@ -6400,12 +6400,12 @@ pcall(function()
     })
 end)
 pcall(function()
-    HouseTab:AddSection({ Name = "Teleporte Para Casas" })
+    HouseTab:AddSection({ Name = "انتقال للبيوت" })
 end)
 
 -- Lista de casas para teletransporte
 local casas = {
-    ["Casa 1"] = Vector3.new(260.29, 4.37, 209.32),
+    ["بيت 1"] = Vector3.new(260.29, 4.37, 209.32),
     ["Casa 2"] = Vector3.new(234.49, 4.37, 228.00),
     ["Casa 3"] = Vector3.new(262.79, 21.37, 210.84),
     ["Casa 4"] = Vector3.new(229.60, 21.37, 225.40),
