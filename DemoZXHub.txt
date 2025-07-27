@@ -6136,7 +6136,7 @@ end
 -- Dropdown para selecionar casas
 pcall(function()
     HouseTab:AddDropdown({
-        Name = "Selecione a Casa",
+        Name = "اختار بيت",
         Options = getHouseList(),
         Default = "...",
         Callback = function(Value)
@@ -6201,7 +6201,7 @@ end)
 -- Botão para teleportar para cofre
 pcall(function()
     HouseTab:AddButton({
-        Name = "Teleportar para Cofre",
+        Name = "انتقال للخزنة",
         Callback = function()
             local House = workspace["001_Lots"]:FindFirstChild(tostring(SelectHouse))
             if House and House:FindFirstChild("HousePickedByPlayer") and game.Players.LocalPlayer.Character then
@@ -6246,7 +6246,7 @@ end)
 -- Toggle para tocar campainha
 pcall(function()
     HouseTab:AddToggle({
-        Name = "Tocar Campainha",
+        Name = "شغل الجرس",
         Description = "",
         Default = false,
         Callback = function(Value)
@@ -6359,18 +6359,18 @@ end)
 
 -- Label após dropdown
 pcall(function()
-    HouseTab:AddLabel("Teleporte para a Casa que Quiser")
+    HouseTab:AddLabel("انتقال للبيوت")
 end)
 
 -- Seção para Auto Unban
 pcall(function()
-    HouseTab:AddSection({ Name = "Auto Unban" })
+    HouseTab:AddSection({ Name = "مضاد باند" })
 end)
 
 -- Toggle para Auto Unban
 pcall(function()
     HouseTab:AddToggle({
-        Name = "Auto Unban",
+        Name = "مضاد باند",
         Default = false,
         Callback = function(state)
             isUnbanActive = state
@@ -6407,7 +6407,7 @@ end)
 
 -- Label após Casa RGB
 pcall(function()
-    HouseTab:AddLabel("Deixa a sua casa RGB")
+    HouseTab:AddLabel("جعل منزلك ملون")
 end)
 
 -- Função para Auto Unban
@@ -6455,7 +6455,7 @@ local audios = {
     {Name = "Nao sei KKKK", ID = 6549021381},
     {Name = "Grito", ID = 80156405968805},
     {Name = "audio estranho", ID = 7705506391},
-    {Name = "AAAH", ID = 7772283448},
+    {Name = "اااع", ID = 7772283448},
     {Name = "Gay, گي", ID = 18786647417},
     {Name = "Bat Hit", ID = 7129073354},
     {Name = "Nuclear Siren", ID = 675587093},
@@ -6472,7 +6472,7 @@ local audios = {
     {Name = "Seloko num compensa", ID = 78442476709262},
     {Name = "(NEW) Chimpanzini Bananini Funk", ID = 137148228908678},
     {Name = "(NEW) Candyland - Tobu", ID = 118939739460633},
-    {Name = "(NEW) Meme do Dom pollo What the hell", ID = 100656590080703},
+    {Name = "(NEW) نغمة ترند", ID = 100656590080703},
     {Name = "(NEW) não to entendendo nd meme estourado", ID = 7962533987},
 }
 
@@ -6543,7 +6543,7 @@ end
 -- Toggle para loop de áudio
 Tab:AddToggle({
     Name = "تفعيل اغنية تلقائي",
-    Description = "Ativa o loop do áudio",
+    Description = "سبام اغنية",
     Default = false,
     Flag = "audio_loop",
     Callback = function(value)
@@ -6895,22 +6895,22 @@ Tab:AddToggle({
 })
 
 Tab:AddParagraph({
-    "Informação de Lag",
-    "O script começa a causar lag após 35 segundos"
+    "ملاحظات اللاق",
+    "انتظر حوالي35 ليبدأ اللاق"
 })
 
-local Tab = Window:MakeTab({"Nomes", "Paper"})
+local Tab = Window:MakeTab({"الاسماء", "Paper"})
 
 local isNameActive = false
 local isBioActive = false
 
 local SectionRGBName = Tab:AddSection({
-    Name = "Nome RGB"
+    Name = "اسم RGB"
 })
 
 Tab:AddToggle({
-    Name = "Nome RGB",
-    Description = "Ativar Nome RGB",
+    Name = "تلوين الاسم",
+    Description = "تلوين اسمك الوات تدريجية",
     Default = false,
     Callback = function(value)
         isNameActive = value
@@ -6920,12 +6920,12 @@ Tab:AddToggle({
 
 
 local SectionRGBBio = Tab:AddSection({
-    Name = "RGB BIO"
+    Name = "RGB بايو"
 })
 
 Tab:AddToggle({
-    Name = "RGB BIO",
-    Description = "Ativar RGB BIO",
+    Name = "بايو ملون",
+    Description = "تلوين البايو",
     Default = false,
     Callback = function(value)
         isBioActive = value
@@ -6979,9 +6979,9 @@ local SectionNames = Tab:AddSection({
 })
 
 local names = {
-    {"Anonymus", " Anonymus "},
-    {"PRO", " PRO "},
-    {"ERR0R_666", " ERR0R_666 "},
+    {"DemoZHub", " DemoZHub "},
+    {"GHIM", " GHIM "},
+    {"Rami", " Rami "},
     {"DARKNE1SSS", " DARKNE1SSS "},
     {"GHOST", " GHOST "},
     {"JOKER", " JOKER "},
@@ -7158,10 +7158,11 @@ ofnawufn = false
     end
 })
 
-CarTab:AddParagraph({"Informação:", "Recomendo usar 2 vezes para garantir que todos os veículos sejam removidos"})
+CarTab:AddParagraph({"معلومات:", "اضغط أكثر من مرة لضمان العمل"})
+
 
 CarTab:AddButton({
-    Name = "Bring All Cars",
+    Name = "سحب كل السيارات",
     Callback = function()
         for _, v in next, workspace.Vehicles:GetChildren() do
             v:SetPrimaryPartCFrame(game.Players.LocalPlayer.Character:GetPrimaryPartCFrame())
@@ -7172,7 +7173,7 @@ CarTab:AddButton({
 CarTab:AddParagraph({"Informação:", "Puxa todos os carros do servidor até você"})
 
 -- Speed V1 Section
-local SpeedSection = CarTab:AddSection({"Speed V1"})
+local SpeedSection = CarTab:AddSection({"سرعة V1"})
 
 local Speed = 50
 local Turbo = 50
@@ -7243,7 +7244,7 @@ CarTab:AddTextBox({
 })
 
 CarTab:AddButton({
-    Name = "Aplicar Velocidade, Turbo e drift",
+    Name = "تفعيل تيربو وتفحيط",
     Callback = function()
         ChangeCarSpeedAndTurbo(Speed, Turbo)
     end
@@ -7975,7 +7976,7 @@ game.Players.PlayerRemoving:Connect(function(player)
 end)
 
 ChildTab:AddButton({
-    Name = "Enviar criança",
+    Name = "ارسال الطفل للشخص",
     Callback = function()
         if not chasingplayer then
             warn("Nenhum jogador selecionado!")
@@ -8027,7 +8028,7 @@ ChildTab:AddButton({
 })
 
 ChildTab:AddButton({
-    Name = "Retornar criança",
+    Name = "رسبون الطفل(لازم بالبداية تضغط هذي) ",
     Callback = function()
         if rawget(getgenv(), "RunService") then
             getgenv().RunService:Disconnect()
@@ -8053,7 +8054,7 @@ ChildTab:AddButton({
 })
 
 ChildTab:AddToggle({
-    Name = "Spectar Player",
+    Name = "تجسس على اللاعب الذي تم ارسال له طفل",
     Default = false,
     Callback = function(Value)
         local Players = game:GetService("Players")
@@ -8241,7 +8242,7 @@ LocalPlayerTab:AddButton({
     Name = "Spam chat Hacked By Mafia",
     Callback = function()
         if game:GetService("TextChatService").ChatVersion == Enum.ChatVersion.TextChatService then 
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rServer: Hacked by Mafia Hub")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rServer: Hacked by DemoZHub")
         else 
             print("Nadaa")
     end
@@ -8249,10 +8250,10 @@ end
 })
 
 LocalPlayerTab:AddButton({
-    Name = "Clear Chat",
+    Name = "مسح الشات",
     Callback = function()
         if game:GetService("TextChatService").ChatVersion == Enum.ChatVersion.TextChatService then 
-            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rServer: Chat Cleared")
+            game:GetService("TextChatService").TextChannels.RBXGeneral:SendAsync("hi\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\rServer: تم حذف الشات")
         else 
             print("Nadaa")
     end
@@ -8260,14 +8261,14 @@ end
 })
 
 Section = LocalPlayerTab:AddSection({
-    Name = "Headsit"
+    Name = "الجلوس فوق راس"
 })
 
 local selectedHeadSit = nil
 local headSitConnection = nil
 
 local headSitDropdown = LocalPlayerTab:AddDropdown({
-    Name = "Selecionar Player",
+    Name = "اختيار لاعب",
     Default = "",
     Options = players,
     Callback = function(Value)
@@ -8276,7 +8277,7 @@ local headSitDropdown = LocalPlayerTab:AddDropdown({
 })
 
 LocalPlayerTab:AddToggle({
-    Name = "Head Sit (Cavalinho)",
+    Name = "جلوس فوق راس اللاعب",
     Default = false,
     Callback = function(bool)
         local player = game.Players.LocalPlayer
@@ -9178,12 +9179,12 @@ local picktoolremote = game:GetService("ReplicatedStorage").RE:FindFirstChild("1
 
 -- Seção de controle de itens
 local Section = ToolsTab:AddSection({
-    Name = "Items Control"
+    Name = "تحكمات الايتمات"
 })
 
 -- Botão para limpar todas as ferramentas
 ToolsTab:AddButton({
-    Name = "Clear All Tools",
+    Name = "حذف كل الايتمات",
     Callback = function()
         local args = {
             [1] = "ClearAllTools"
@@ -9194,12 +9195,12 @@ ToolsTab:AddButton({
 
 -- Seção para equipar itens
 Section = ToolsTab:AddSection({
-    Name = "Equip Items"
+    Name = "امسك جميع الايتمات"
 })
 
 -- Botão para equipar todos os itens
 ToolsTab:AddButton({
-    Name = "Equipar todos os itens",
+    Name = "تجهيز كل الايتمات",
     Callback = function()
         for _, tool in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
             if tool:IsA("Tool") then
@@ -11290,16 +11291,16 @@ ToolsTab:AddButton({
     end
 })
 
-local UniversalTab = Window:MakeTab({"Scripts Universais", "plane"})
+local UniversalTab = Window:MakeTab({"سكربتات متنوعة", "plane"})
 
 -- Seção para Scripts Universais
 Section = UniversalTab:AddSection({
-    Name = "Scripts Universais"
+    Name = "سكربتات مفيدة"
 })
 
 -- Botão para Rael Hub Brook
 UniversalTab:AddButton({
-    Name = "Rael Hub Brook",
+    Name = "Rael Hubسكربت",
     Callback = function()
         loadstring(game:HttpGet("https://rawscripts.net/raw/The-Mimic-Rael-Hub-20921"))()
     end
@@ -11307,7 +11308,7 @@ UniversalTab:AddButton({
 
 -- Botão para ShiftLock
 UniversalTab:AddButton({
-    Name = "ShiftLock",
+    Name = "سكربت قفل",
     Callback = function()
         loadstring(game:HttpGet("https://pastebin.com/raw/N2tiHgyv"))()
     end
@@ -11315,7 +11316,7 @@ UniversalTab:AddButton({
 
 -- Botão para Ghost Hub
 UniversalTab:AddButton({
-    Name = "Ghost Hub",
+    Name = "Ghost Hub سكربت الشبح",
     Callback = function()
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-GhostHub-16534"))()
     end
@@ -11323,7 +11324,7 @@ UniversalTab:AddButton({
 
 -- Botão para Infinite Yield
 UniversalTab:AddButton({
-    Name = "InfiniteYield - Cmd",
+    Name = "InfiniteYield - ادمن انفنتي",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
     end
@@ -11331,7 +11332,7 @@ UniversalTab:AddButton({
 
 -- Botão para TP Tool
 UniversalTab:AddButton({
-    Name = "TP Tool",
+    Name = "اداة انتقال",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/err0r129/KptHadesBlair/main/Bao.lua"))()
     end
@@ -11339,7 +11340,7 @@ UniversalTab:AddButton({
 
 -- Botão para Fly Gui
 UniversalTab:AddButton({
-    Name = "Fly Gui",
+    Name = "طيران",
     Callback = function()
         loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Fly-v3-7412"))()
     end
@@ -11347,7 +11348,7 @@ UniversalTab:AddButton({
 
 -- Botão para Nameless Admin 
 UniversalTab:AddButton({
-    Name = "Nameless Admin - Cmd",
+    Name = "Namelesسكربت ادمن",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
     end
@@ -11355,7 +11356,7 @@ UniversalTab:AddButton({
 
 
 UniversalTab:AddButton({
-    Name = "Telekinesis",
+    Name = "تحكم بالسيارات",
     Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md", true))()
     end
