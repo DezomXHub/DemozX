@@ -8592,7 +8592,7 @@ else
         game:GetService("Players").LocalPlayer.Character:FindFirstChild(toolselected).Parent = game.Players.LocalPlayer.Backpack
         game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(toolselected).Parent = game.Players.LocalPlayer.Character
         game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Mafia Hub Tool",
+            Title = "DemoZ Hub Tool",
             Text = "Tool Dupada: " .. m .. " / " .. dupeamot,
             Duration = 1
         })
