@@ -1,7 +1,6 @@
-TrollTab:AddButton({
-    Name = "[🚀]  (تجميد اي لاعب عند لمسه)",
-    Description = "تجميد اللاعب عند النقر",
-    Callback = function()
+Troll:AddButton({
+  Name = " تجميد اي لاعب ب ضغطة[Beta]",
+  Callback = function() 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
