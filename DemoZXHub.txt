@@ -807,7 +807,7 @@ TextChatService.OnIncomingMessage = function(message)
 end
 local args = {
 	"RolePlayName",
-	"DemoZ-Hub V0.2"
+	"DemoZ-Hub V0.3"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
@@ -817,7 +817,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eColo1r"):FireServer(unpack(args))
 local args = {
 	"RolePlayBio",
-	"سكربت تعاون جحيم+رامي"
+	"تحديث الابواب"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("RE"):WaitForChild("1RPNam1eTex1t"):FireServer(unpack(args))
 local args = {
@@ -1266,154 +1266,131 @@ local TrollTab = Window:MakeTab({ Title = "سكربتات تخريب", Icon = "r
 
 TrollTab:AddSection({ "ثقب اسود" })
 TrollTab:AddButton({
-    Name = "ثقب اسود للاجزاء",
-    Description = " يسحب الاجزاء المتحركة",
+    Name = "V2(هالة ابواب💥)",
+    Description = "تدوير الابواب والسيارات حول اللاعب",
     Callback = function()
-        local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local LocalPlayer = Players.LocalPlayer
-local Workspace = game:GetService("Workspace")
+    local Players, RunService, LocalPlayer, Workspace = game:GetService("Players"), game:GetService("RunService"), game:GetService("Players").LocalPlayer, game:GetService("Workspace")
 
-local angle = 1
-local radius = 10
-local blackHoleActive = false
+local gui = Instance.new("ScreenGui", game.CoreGui)
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 300, 0, 200)
+frame.Position = UDim2.new(0.4, 0, 0.3, 0)
+frame.BackgroundColor3 = Color3.fromRGB(110, 0, 0)
+frame.Active = true
+frame.Draggable = true
 
-local function setupPlayer()
-    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local nameBox = Instance.new("TextBox", frame)
+nameBox.Size = UDim2.new(0, 280, 0, 30)
+nameBox.Position = UDim2.new(0, 10, 0, 10)
+nameBox.PlaceholderText = "اكتب اسم اللاعب"
+nameBox.TextScaled = true
 
-    local Folder = Instance.new("Folder", Workspace)
-    local Part = Instance.new("Part", Folder)
-    local Attachment1 = Instance.new("Attachment", Part)
-    Part.Anchored = true
-    Part.CanCollide = false
-    Part.Transparency = 1
+local radiusBox = Instance.new("TextBox", frame)
+radiusBox.Size = UDim2.new(0, 280, 0, 30)
+radiusBox.Position = UDim2.new(0, 10, 0, 50)
+radiusBox.PlaceholderText = "اكتب نصف القطر"
+radiusBox.Text = "10"
+radiusBox.TextScaled = true
 
-    return humanoidRootPart, Attachment1
+local toggleButton = Instance.new("TextButton", frame)
+toggleButton.Size = UDim2.new(0, 280, 0, 30)
+toggleButton.Position = UDim2.new(0, 10, 0, 90)
+toggleButton.Text = "Bring | مطفي"
+toggleButton.TextScaled = true
+
+local modeButton = Instance.new("TextButton", frame)
+modeButton.Size = UDim2.new(0, 280, 0, 30)
+modeButton.Position = UDim2.new(0, 10, 0, 130)
+modeButton.Text = "الوضع : تجميع"
+modeButton.TextScaled = true
+
+local parts, active, rotateMode, connection = {}, false, false, nil
+local targetPlayer, hrp
+
+local function getPlayer(name)
+	for _, p in ipairs(Players:GetPlayers()) do
+		if p.Name:lower():find(name:lower()) or p.DisplayName:lower():find(name:lower()) then
+			return p
+		end
+	end
 end
 
-local humanoidRootPart, Attachment1 = setupPlayer()
-
-if not getgenv().Network then
-    getgenv().Network = {
-        BaseParts = {},
-        Velocity = Vector3.new(14.46262424, 14.46262424, 14.46262424)
-    }
-
-    Network.RetainPart = function(part)
-        if typeof(part) == "Instance" and part:IsA("BasePart") and part:IsDescendantOf(Workspace) then
-            table.insert(Network.BaseParts, part)
-            part.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
-            part.CanCollide = false
-        end
-    end
-
-    local function EnablePartControl()
-        LocalPlayer.ReplicationFocus = Workspace
-        RunService.Heartbeat:Connect(function()
-            sethiddenproperty(LocalPlayer, "SimulationRadius", math.huge)
-            for _, part in pairs(Network.BaseParts) do
-                if part:IsDescendantOf(Workspace) then
-                    part.Velocity = Network.Velocity
-                end
-            end
-        end)
-    end
-
-    EnablePartControl()
+local function forcePart(part)
+	if part:IsA("BasePart") and not part.Anchored and not part.Parent:FindFirstChildOfClass("Humanoid") and part.Name ~= "Handle" then
+		for _, c in ipairs(part:GetChildren()) do
+			if c:IsA("BodyMover") or c:IsA("AlignPosition") then
+				c:Destroy()
+			end
+		end
+		part.CanCollide = false
+		local att = Instance.new("Attachment", part)
+		local align = Instance.new("AlignPosition", part)
+		align.Attachment0 = att
+		align.RigidityEnabled = false
+		align.Mode = Enum.PositionAlignmentMode.OneAttachment
+		align.MaxForce = 1e9
+		align.Responsiveness = 200
+		table.insert(parts, {part=part, att=att, align=align})
+	end
 end
 
-local function ForcePart(v)
-    if v:IsA("Part") and not v.Anchored and not v.Parent:FindFirstChild("Humanoid") and not v.Parent:FindFirstChild("Head") and v.Name ~= "Handle" then
-        for _, x in next, v:GetChildren() do
-            if x:IsA("BodyAngularVelocity") or x:IsA("BodyForce") or x:IsA("BodyGyro") or x:IsA("BodyPosition") or x:IsA("BodyThrust") or x:IsA("BodyVelocity") or x:IsA("RocketPropulsion") then
-                x:Destroy()
-            end
-        end
-        if v:FindFirstChild("Attachment") then
-            v:FindFirstChild("Attachment"):Destroy()
-        end
-        if v:FindFirstChild("AlignPosition") then
-            v:FindFirstChild("AlignPosition"):Destroy()
-        end
-        if v:FindFirstChild("Torque") then
-            v:FindFirstChild("Torque"):Destroy()
-        end
-        v.CanCollide = false
-        
-        local Torque = Instance.new("Torque", v)
-        Torque.Torque = Vector3.new(1000000, 1000000, 1000000)
-        local AlignPosition = Instance.new("AlignPosition", v)
-        local Attachment2 = Instance.new("Attachment", v)
-        Torque.Attachment0 = Attachment2
-        AlignPosition.MaxForce = math.huge
-        AlignPosition.MaxVelocity = math.huge
-        AlignPosition.Responsiveness = 500
-        AlignPosition.Attachment0 = Attachment2
-        AlignPosition.Attachment1 = Attachment1
-    end
+local function startBring()
+	active = true
+	toggleButton.Text = "Bring | شغال"
+	for _, v in ipairs(Workspace:GetDescendants()) do forcePart(v) end
+	connection = Workspace.DescendantAdded:Connect(forcePart)
 end
 
-local function toggleBlackHole()
-    blackHoleActive = not blackHoleActive
-    if blackHoleActive then
-        for _, v in next, Workspace:GetDescendants() do
-            ForcePart(v)
-        end
-
-        Workspace.DescendantAdded:Connect(function(v)
-            if blackHoleActive then
-                ForcePart(v)
-            end
-        end)
-
-        spawn(function()
-            while blackHoleActive and RunService.RenderStepped:Wait() do
-                angle = angle + math.rad(2)
-
-                local offsetX = math.cos(angle) * radius
-                local offsetZ = math.sin(angle) * radius
-
-                Attachment1.WorldCFrame = humanoidRootPart.CFrame * CFrame.new(offsetX, 0, offsetZ)
-            end
-        end)
-    else
-        Attachment1.WorldCFrame = CFrame.new(0, -1000, 0)
-    end
+local function stopBring()
+	active = false
+	toggleButton.Text = "Bring | مطفي"
+	if connection then connection:Disconnect() end
+	for _, p in ipairs(parts) do
+		if p.part and p.part:IsDescendantOf(Workspace) then
+			p.part.CanCollide = true
+			p.att:Destroy()
+			p.align:Destroy()
+		end
+	end
+	parts = {}
 end
 
-LocalPlayer.CharacterAdded:Connect(function()
-    humanoidRootPart, Attachment1 = setupPlayer()
-    if blackHoleActive then
-        toggleBlackHole()
-    end
+toggleButton.MouseButton1Click:Connect(function()
+	targetPlayer = getPlayer(nameBox.Text)
+	if targetPlayer then
+		hrp = targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+		if hrp then
+			if not active then
+				startBring()
+			else
+				stopBring()
+			end
+		end
+	end
 end)
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
-local window = library:Window("Projeto LKB")
-
-window:Slider("Radius Blackhole",1,100,10, function(Value)
-   radius = Value
+modeButton.MouseButton1Click:Connect(function()
+	rotateMode = not rotateMode
+	modeButton.Text = rotateMode and "الوضع : دوران" or "الوضع : تجميع"
 end)
 
-window:Toggle("Blackhole", true, function(Value)
-       if Value then
-            toggleBlackHole()
-        else
-            blackHoleActive = false
-        end
+RunService.Heartbeat:Connect(function()
+	if active and hrp then
+		local radius = tonumber(radiusBox.Text) or 10
+		local timeNow = tick()
+		for i, data in ipairs(parts) do
+			local part, att, align = data.part, data.att, data.align
+			if rotateMode then
+				local angle = (2 * math.pi / #parts) * i + timeNow*1.5
+				local pos = hrp.Position + Vector3.new(math.cos(angle)*radius, 3, math.sin(angle)*radius)
+				align.Position = pos
+			else
+				align.Position = hrp.Position + Vector3.new(0, 3, 0)
+			end
+		end
+	end
 end)
 
-spawn(function()
-    while true do
-        RunService.RenderStepped:Wait()
-        if blackHoleActive then
-            angle = angle + math.rad(angleSpeed)
-        end
-    end
-end)
-
-toggleBlackHole()
     end
 })
 
