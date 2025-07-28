@@ -1396,7 +1396,7 @@ end)
 
 TrollTab:AddSection({ "تجميد  السيرفر 🥶(اللاعبين)- " })
 TrollTab:AddButton({
-    Name = "[🌌🚀]  (خلي عرض السيرفر بعلاگة🥶)",
+    Name = "[🌌🚀]  (تم توقيفه)",
     Description = "تجميد اللاعبين داخل السيرفر",
     Callback = function()
 -- Serviços
@@ -1501,91 +1501,6 @@ task.spawn(function()
 end)
 
 -- ========================
--- ATAQUE COM ARMA: Assault
--- ========================
-
-local RE = ReplicatedStorage:WaitForChild("RE")
-local ClearEvent = RE:FindFirstChild("1Clea1rTool1s")
-local ToolEvent = RE:FindFirstChild("1Too1l")
-local FireEvent = RE:FindFirstChild("1Gu1n")
-
--- Limpa ferramentas
-local function clearAllTools()
-    if ClearEvent then
-        ClearEvent:FireServer("ClearAllTools")
-    end
-end
-
--- Solicita Assault
-local function getAssault()
-    if ToolEvent then
-        ToolEvent:InvokeServer("PickingTools", "Assault")
-    end
-end
-
--- Verifica se recebeu Assault
-local function hasAssault()
-    return Player.Backpack:FindFirstChild("Assault") ~= nil
-end
-
--- Atira em parte
-local function fireAtPart(targetPart)
-    local gunScript = Player.Backpack:FindFirstChild("Assault")
-        and Player.Backpack.Assault:FindFirstChild("GunScript_Local")
-
-    if not gunScript or not targetPart then return end
-
-    local args = {
-        targetPart,
-        targetPart,
-        Vector3.new(1e14, 1e14, 1e14),
-        targetPart.Position,
-        gunScript:FindFirstChild("MuzzleEffect"),
-        gunScript:FindFirstChild("HitEffect"),
-        0,
-        0,
-        { false },
-        {
-            25,
-            Vector3.new(100, 100, 100),
-            BrickColor.new(29),
-            0.25,
-            Enum.Material.SmoothPlastic,
-            0.25
-        },
-        true,
-        false
-    }
-
-    FireEvent:FireServer(unpack(args))
-end
-
--- Atira em todos os jogadores
-local function fireAtAllPlayers(times)
-    for i = 1, times do
-        for _, player in ipairs(Players:GetPlayers()) do
-            if player ~= Player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
-                fireAtPart(player.Character.HumanoidRootPart)
-                task.wait(0.1)
-            end
-        end
-    end
-end
-
--- Loop automático de ataque
-task.spawn(function()
-    while true do
-        clearAllTools()
-        getAssault()
-
-        repeat
-            task.wait(0.2)
-        until hasAssault()
-
-        fireAtAllPlayers(3)
-        task.wait(1)
-    end
-end)
 end
 })
 
