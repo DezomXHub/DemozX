@@ -4,7 +4,7 @@ local LocalPlayer = Players.LocalPlayer
 
 -- إنشاء الأداة
 local tool = Instance.new("Tool")
-tool.Name = "تجميد الناس"
+tool.Name = "DemoZتجميد مطور"
 tool.RequiresHandle = false
 tool.CanBeDropped = false
 tool.Parent = LocalPlayer.Backpack
