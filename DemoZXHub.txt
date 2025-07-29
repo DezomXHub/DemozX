@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DezomXHub/Daemon/main/DemoZXHub.txt"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DezomXHub/Daemon/main/DemoZHub.txt"))()
